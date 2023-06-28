@@ -1,7 +1,10 @@
 package project.financemanagement.demo.repository;
 
-import org.springframework.data.repository.CrudRepository;
-import project.financemanagement.demo.entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import project.financemanagement.demo.entity.Client;
 
-public interface UserRepository extends CrudRepository<User, Long> {
+import java.util.List;
+
+public interface UserRepository extends JpaRepository<Client, Long> {
+    List<Client> findAllByOrderByClientIdAsc();
 }

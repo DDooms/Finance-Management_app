@@ -1,67 +1,3 @@
-/*
-import React, { useState } from 'react';
-import { Button, ThemeProvider, createTheme } from '@mui/material';
-import { Experimental_CssVarsProvider as CssVarsProvider, useColorScheme } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-
-const lightTheme = createTheme({
-    palette: {
-        mode: 'light',
-    },
-});
-
-const darkTheme = createTheme({
-    palette: {
-        mode: 'dark',
-    },
-});
-
-const ModeSwitcher = () => {
-    const { mode, setMode } = useColorScheme();
-    const [isDarkMode, setIsDarkMode] = useState(mode === 'dark');
-
-    const handleModeToggle = () => {
-        const newMode = isDarkMode ? 'light' : 'dark';
-        setIsDarkMode(!isDarkMode);
-        setMode(newMode);
-    };
-
-    const backgroundImage = isDarkMode
-        ? 'https://shorturl.at/mDT06' // Replace with the actual URL of the day background image
-        : 'https://shorturl.at/tVW56'; // Replace with the actual URL of the night background image
-
-    return (
-        <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
-            <CssBaseline />
-            <div
-                style={{
-                    backgroundImage: `url(${backgroundImage})`,
-                    backgroundSize: 'cover',
-                    backgroundRepeat: 'no-repeat',
-                    width: '100%',
-                    height: '100%',
-                }}
-            >
-                <Button variant="outlined" onClick={handleModeToggle}>
-                    {isDarkMode ? 'Light' : 'Dark'} Mode
-                </Button>
-            </div>
-        </ThemeProvider>
-    );
-};
-
-function App() {
-    return (
-        <CssVarsProvider>
-            <ModeSwitcher />
-        </CssVarsProvider>
-    );
-}
-
-export default App;
-*/
-
-
 import React, {useEffect, useState} from 'react';
 import { Button, CssBaseline } from '@mui/material';
 
@@ -78,12 +14,12 @@ const App = () => {
     }, [isDarkMode]);
 
     const backgroundImage = isDarkMode
-        ? 'https://shorturl.at/mDT06' // Replace with the actual URL of the day background image
-        : 'https://shorturl.at/svMV2'; // Replace with the actual URL of the night background image
+        ? 'https://shorturl.at/mDT06'
+        : 'https://shorturl.at/svMV2';
 
     const buttonImage = isDarkMode
-        ? 'https://shorturl.at/mDT06' // URL of the day image for the button
-        : 'https://shorturl.at/svMV2'; // URL of the night image for the button
+        ? 'https://shorturl.at/mDT06'
+        : 'https://shorturl.at/svMV2';
 
     return (
         <div

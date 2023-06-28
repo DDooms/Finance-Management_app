@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 import {Button, Typography} from '@mui/material';
 import {useTheme} from '@mui/material/styles';
 import MobileStepper from '@mui/material/MobileStepper';
@@ -7,6 +8,7 @@ import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import SwipingViews from 'react-swipeable-views';
 import {autoPlay} from 'react-swipeable-views-utils';
 import ThemeToggle from '../button/ThemeToggle';
+import '../styles/styles.css'
 
 const AutoPlaySwipingViews = autoPlay(SwipingViews);
 
@@ -37,6 +39,7 @@ const HomePage = () => {
     const theme = useTheme();
     const [activeStep, setActiveStep] = useState(0);
     const maxSteps = images.length;
+    const navigate = useNavigate();
 
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -63,10 +66,12 @@ const HomePage = () => {
                     Manage your finances with ease.
                 </Typography>
                 <div className="button-group">
-                    <Button variant="contained" color="primary" size="large" className="login-button">
+                    <Button variant="contained" color="primary" size="large" className="login-button"
+                            onClick={() => navigate('/login')}>
                         Log In
                     </Button>
-                    <Button variant="contained" color="secondary" size="large" className="register-button">
+                    <Button variant="contained" color="secondary" size="large" className="register-button"
+                            onClick={() => navigate('/register')}>
                         Register
                     </Button>
                 </div>

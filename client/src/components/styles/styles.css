@@ -1,0 +1,65 @@
+body {
+    background-image: url('https://shorturl.at/mDT06');
+    background-size: cover;
+    background-repeat: repeat;
+}
+
+body.dark-mode {
+    background-image: url('https://shorturl.at/svMV2');
+}
+
+.homepage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+
+.theme-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 16px;
+    z-index: 1;
+}
+
+.welcome-container {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.welcome-text {
+    color: white;
+}
+
+.image-label-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+.image-label {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+}
+
+.image-label-text {
+    color: white;
+    margin: 0; /* Remove any default margin */
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.image {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    overflow: hidden;
+}

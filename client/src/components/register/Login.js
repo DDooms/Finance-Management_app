@@ -39,7 +39,7 @@ const Login = () => {
 
     return (
         <div className="main-page">
-            <div className="user-input">
+            <div className="client-input">
                 <label htmlFor="username">
                     <img src="https://imageshack.com/i/pmoR8X3cp" alt="User Icon" className="register-image" />
                     <div className="line"></div>

@@ -6,6 +6,7 @@ import Login from './components/register/Login';
 import Home from "./components/home/Home";
 import Error from "./components/error/Error";
 import {Dashboard} from "@material-ui/icons";
+import ThemeToggle from "./components/button/ThemeToggle";
 
 
 function App() {
@@ -13,6 +14,9 @@ function App() {
         // <AuthProvider>
         <Router>
             <div className="App">
+                <div className="theme-toggle">
+                    <ThemeToggle />
+                </div>
                 <Routes>
                     <Route path='/' element={<Home/>}/>
                     <Route path="/register" element={<Register/>}/>

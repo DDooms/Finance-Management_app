@@ -55,9 +55,6 @@ const HomePage = () => {
 
     return (
         <div className="homepage">
-            <div className="theme-toggle">
-                <ThemeToggle />
-            </div>
             <div className="welcome-container">
                 <Typography variant="h4" component="h1" gutterBottom className="welcome-text">
                     Welcome to Finance Manager!

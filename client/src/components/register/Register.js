@@ -77,7 +77,7 @@ const Register = () => {
 
     return (
         <div className="main-page">
-            <div className="user-input">
+            <div className="client-input">
                 <label htmlFor="username">
                     <img src="https://imageshack.com/i/pmoR8X3cp" alt="User Icon" className="register-image" />
                     <div className="line"></div>
@@ -91,7 +91,7 @@ const Register = () => {
                     />
                 </label>
             </div>
-            <div className="user-input">
+            <div className="client-input">
                 <label htmlFor="email">
                     <img src="https://imageshack.com/i/po92oMvKp" alt="User Icon" className="register-image" />
                     <div className="line"></div>

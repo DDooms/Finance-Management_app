@@ -5,6 +5,6 @@ import project.financemanagement.demo.entity.Client;
 
 import java.util.List;
 
-public interface UserRepository extends JpaRepository<Client, Long> {
+public interface ClientRepository extends JpaRepository<Client, Long> {
     List<Client> findAllByOrderByClientIdAsc();
 }

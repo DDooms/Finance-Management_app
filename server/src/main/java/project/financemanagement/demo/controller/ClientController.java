@@ -6,7 +6,7 @@ import project.financemanagement.demo.entity.Client;
 import java.util.List;
 
 @RequestMapping("/user")
-public interface UserController {
+public interface ClientController {
     @GetMapping
     List<Client> getEveryUser();
 

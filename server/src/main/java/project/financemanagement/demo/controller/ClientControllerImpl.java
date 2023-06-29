@@ -3,41 +3,41 @@ package project.financemanagement.demo.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 import project.financemanagement.demo.entity.Client;
-import project.financemanagement.demo.service.UserService;
+import project.financemanagement.demo.service.ClientService;
 
 import java.util.List;
 
 @RestController
-public class UserControllerImpl implements UserController {
-    private final UserService userService;
+public class ClientControllerImpl implements ClientController {
+    private final ClientService clientService;
 
     @Autowired
-    public UserControllerImpl(UserService userService) {
-        this.userService = userService;
+    public ClientControllerImpl(ClientService clientService) {
+        this.clientService = clientService;
     }
 
     @Override
     public List<Client> getEveryUser() {
-        return this.userService.getEveryUser();
+        return this.clientService.getEveryClient();
     }
 
     @Override
     public Client getUser(Long id) {
-        return this.userService.getUser(id);
+        return this.clientService.getClient(id);
     }
 
     @Override
     public Client createUser(Client client) {
-        return this.userService.createUser(client);
+        return this.clientService.createClient(client);
     }
 
     @Override
     public Client updateUser(Long id, Client client) {
-        return this.userService.updateUser(id, client);
+        return this.clientService.updateClient(id, client);
     }
 
     @Override
     public void deleteUser(Long id) {
-        this.userService.deleteUser(id);
+        this.clientService.deleteClient(id);
     }
 }

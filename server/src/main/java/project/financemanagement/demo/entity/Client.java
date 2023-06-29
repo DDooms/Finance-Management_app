@@ -13,10 +13,6 @@ public class Client {
     private String username; /*the user's username for logging in*/
     private String password; /*the user's password for logging in*/
     private String email; /*the user's email address for account verification and password recovery*/
-/*    private String firstName; *//*the user's first name*//*
-    private String lastName; *//*the user's last name*//*
-    private String address; *//*the user's address*//*
-    private String phoneNumber; *//*the user's phone number*/
 
     public String getUsername() {
         return username;

@@ -5,7 +5,7 @@ import Register from './components/register/Register';
 import Login from './components/register/Login';
 import Home from "./components/home/Home";
 import Error from "./components/error/Error";
-import {Dashboard} from "@material-ui/icons";
+import Dashboard from "./components/dashboard/Dashboard";
 import ThemeToggle from "./components/button/ThemeToggle";
 
 

@@ -5,7 +5,8 @@ const App = () => {
     const [isDarkMode, setIsDarkMode] = useState(false);
 
     const handleModeToggle = () => {
-        setIsDarkMode(!isDarkMode);
+        const newState = !isDarkMode;
+        setIsDarkMode(newState);
     };
 
     useEffect(() => {
@@ -50,6 +51,7 @@ const App = () => {
             >
                 {isDarkMode ? 'Light' : 'Dark'} Mode
             </Button>
+            <p>Toggle Button State: {isDarkMode.toString()}</p>
         </div>
     );
 };

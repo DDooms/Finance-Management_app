@@ -12,6 +12,9 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
+import Avatar from '@mui/material/Avatar';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 
 export default function SwipingTemporaryDrawer() {
     const [state, setState] = useState({
@@ -35,6 +38,18 @@ export default function SwipingTemporaryDrawer() {
             onClick={toggleDrawer(false)}
             onKeyDown={toggleDrawer(false)}
         >
+            <Stack direction="column" alignItems="left" sx={{ padding: '1rem', textAlign: 'center' }}>
+                <Stack direction="row" spacing={2} alignItems="center">
+                    <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                    <Typography variant="h6" component="div">
+                        Beray
+
+                        <Typography variant="subtitle2" component="div">
+                            Wallet App
+                        </Typography>
+                    </Typography>
+                </Stack>
+            </Stack>
             <List>
                 {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
                     <ListItem key={text} disablePadding>
@@ -63,11 +78,10 @@ export default function SwipingTemporaryDrawer() {
         </Box>
     );
 
-    // Define a custom theme with the desired background color
     const theme = createTheme({
         palette: {
             background: {
-                paper: '#566456', // Replace with your desired colors
+                paper: '#566456',
             },
         },
     });

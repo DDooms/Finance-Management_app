@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import SwipingDrawer from '@mui/material/SwipeableDrawer';
 import Button from '@mui/material/Button';
@@ -12,17 +13,13 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 
-export default function SwipingTemporaryDrawer({ isDarkMode }) {
+export default function SwipingTemporaryDrawer() {
     const [state, setState] = useState({
         left: false,
     });
 
     const toggleDrawer = (open) => (event) => {
-        if (
-            event &&
-            event.type === 'keydown' &&
-            ((event.key === 'Tab') || (event.key === 'Shift'))
-        ) {
+        if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
             return;
         }
 
@@ -33,8 +30,6 @@ export default function SwipingTemporaryDrawer({ isDarkMode }) {
         <Box
             sx={{
                 width: 250,
-                backgroundColor: isDarkMode ? 'black' : 'white',
-                color: isDarkMode ? 'white' : 'black',
             }}
             role="presentation"
             onClick={toggleDrawer(false)}
@@ -68,24 +63,35 @@ export default function SwipingTemporaryDrawer({ isDarkMode }) {
         </Box>
     );
 
+    // Define a custom theme with the desired background color
+    const theme = createTheme({
+        palette: {
+            background: {
+                paper: '#566456', // Replace with your desired colors
+            },
+        },
+    });
+
     return (
         <div>
             <Button
                 onClick={toggleDrawer(true)}
                 style={{
-                    color: isDarkMode ? 'black' : 'white',
+                    color: 'black',
                 }}
             >
                 <MenuIcon sx={{ color: 'white', fontSize: '2rem' }} />
             </Button>
-            <SwipingDrawer
-                anchor="left"
-                open={state.left}
-                onClose={toggleDrawer(false)}
-                onOpen={toggleDrawer(true)}
-            >
-                {list}
-            </SwipingDrawer>
+            <ThemeProvider theme={theme}>
+                <SwipingDrawer
+                    anchor="left"
+                    open={state.left}
+                    onClose={toggleDrawer(false)}
+                    onOpen={toggleDrawer(true)}
+                >
+                    {list}
+                </SwipingDrawer>
+            </ThemeProvider>
         </div>
     );
 }

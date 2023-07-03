@@ -51,7 +51,6 @@ const App = () => {
             >
                 {isDarkMode ? 'Light' : 'Dark'} Mode
             </Button>
-            <p>Toggle Button State: {isDarkMode.toString()}</p>
         </div>
     );
 };

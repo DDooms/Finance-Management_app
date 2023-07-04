@@ -12,6 +12,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import {useTheme} from '@mui/material/styles';
+import MobileStepper from '@mui/material/MobileStepper';
 
 export {
     createTheme,
@@ -29,4 +31,6 @@ export {
     Avatar,
     Stack,
     Typography,
+    useTheme,
+    MobileStepper,
 };

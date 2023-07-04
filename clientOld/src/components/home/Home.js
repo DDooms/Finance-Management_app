@@ -1,13 +1,14 @@
 import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
-import {Button, Typography} from '@mui/material';
-import {useTheme} from '@mui/material/styles';
-import MobileStepper from '@mui/material/MobileStepper';
-import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import SwipingViews from 'react-swipeable-views';
 import {autoPlay} from 'react-swipeable-views-utils';
 import '../styles/styles.css'
+import {
+    Button, Typography, useTheme, MobileStepper,
+} from '../muiImports/general/General';
+import {
+    KeyboardArrowLeft, KeyboardArrowRight,
+} from '../muiImports/icons/Icons';
 
 const AutoPlaySwipingViews = autoPlay(SwipingViews);
 

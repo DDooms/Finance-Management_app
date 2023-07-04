@@ -5,6 +5,8 @@ import CandlestickChartRoundedIcon from '@mui/icons-material/CandlestickChartRou
 import QueryStatsRoundedIcon from '@mui/icons-material/QueryStatsRounded';
 import AccountBoxRoundedIcon from '@mui/icons-material/AccountBoxRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
+import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
+import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 
 export {
     PriceChangeRoundedIcon,
@@ -14,4 +16,6 @@ export {
     QueryStatsRoundedIcon,
     AccountBoxRoundedIcon,
     LogoutRoundedIcon,
+    KeyboardArrowLeft,
+    KeyboardArrowRight,
 };

@@ -56,7 +56,7 @@ export default function SwipingTemporaryDrawer() {
                     </ListItemButton>
                 </ListItem>
                 <ListItem disablePadding>
-                    <ListItemButton>
+                    <ListItemButton onClick={() => navigate('/dashboard/budget-financial-goals')}>
                         <ListItemIcon>
                             <AccountBalanceWalletRoundedIcon />
                         </ListItemIcon>
@@ -69,7 +69,7 @@ export default function SwipingTemporaryDrawer() {
                 Extras
             </Typography>
             <ListItem disablePadding>
-                <ListItemButton>
+                <ListItemButton onClick={() => navigate('/dashboard/savings')}>
                     <ListItemIcon>
                         <SavingsRoundedIcon />
                     </ListItemIcon>
@@ -77,7 +77,7 @@ export default function SwipingTemporaryDrawer() {
                 </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
-                <ListItemButton>
+                <ListItemButton onClick={() => navigate('/dashboard/investment-tracking')}>
                     <ListItemIcon>
                         <CandlestickChartRoundedIcon />
                     </ListItemIcon>
@@ -85,7 +85,7 @@ export default function SwipingTemporaryDrawer() {
                 </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
-                <ListItemButton>
+                <ListItemButton onClick={() => navigate('/dashboard/analytics')}>
                     <ListItemIcon>
                         <QueryStatsRoundedIcon />
                     </ListItemIcon>
@@ -97,7 +97,7 @@ export default function SwipingTemporaryDrawer() {
                 Account
             </Typography>
             <ListItem disablePadding>
-                <ListItemButton>
+                <ListItemButton onClick={() => navigate('/dashboard/account')}>
                     <ListItemIcon>
                         <AccountBoxRoundedIcon />
                     </ListItemIcon>
@@ -105,7 +105,7 @@ export default function SwipingTemporaryDrawer() {
                 </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
-                <ListItemButton>
+                <ListItemButton onClick={() => navigate('/dashboard/HANDLE LOGOUT OPERATION')}>
                     <ListItemIcon>
                         <LogoutRoundedIcon />
                     </ListItemIcon>

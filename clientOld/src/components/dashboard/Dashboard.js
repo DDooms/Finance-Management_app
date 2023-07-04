@@ -1,29 +1,11 @@
 import React, {useState} from 'react';
 import {
-    createTheme,
-    ThemeProvider,
-    Box,
-    SwipingDrawer,
-    Button,
-    List,
-    Divider,
-    ListItem,
-    ListItemButton,
-    ListItemIcon,
-    ListItemText,
-    MenuIcon,
-    Avatar,
-    Stack,
-    Typography,
+    createTheme, ThemeProvider, Box, SwipingDrawer, Button, List, Divider, ListItem, ListItemButton, ListItemIcon, ListItemText,
+    MenuIcon, Avatar, Stack, Typography,
 } from '../muiImports/general/General';
 import {
-    PriceChangeRoundedIcon,
-    AccountBalanceWalletRoundedIcon,
-    SavingsRoundedIcon,
-    CandlestickChartRoundedIcon,
-    QueryStatsRoundedIcon,
-    AccountBoxRoundedIcon,
-    LogoutRoundedIcon,
+    PriceChangeRoundedIcon, AccountBalanceWalletRoundedIcon, SavingsRoundedIcon, CandlestickChartRoundedIcon,
+    QueryStatsRoundedIcon, AccountBoxRoundedIcon, LogoutRoundedIcon,
 } from '../muiImports/icons/Icons';
 
 export default function SwipingTemporaryDrawer() {

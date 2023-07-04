@@ -1,25 +1,30 @@
-import React, { useState } from 'react';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import SwipingDrawer from '@mui/material/SwipeableDrawer';
-import Button from '@mui/material/Button';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
-import MenuIcon from '@mui/icons-material/Menu';
-import Avatar from '@mui/material/Avatar';
-import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
-import PriceChangeRoundedIcon from '@mui/icons-material/PriceChangeRounded';
-import AccountBalanceWalletRoundedIcon from '@mui/icons-material/AccountBalanceWalletRounded';
-import SavingsRoundedIcon from '@mui/icons-material/SavingsRounded';
-import CandlestickChartRoundedIcon from '@mui/icons-material/CandlestickChartRounded';
-import QueryStatsRoundedIcon from '@mui/icons-material/QueryStatsRounded';
+import React, {useState} from 'react';
+import {
+    createTheme,
+    ThemeProvider,
+    Box,
+    SwipingDrawer,
+    Button,
+    List,
+    Divider,
+    ListItem,
+    ListItemButton,
+    ListItemIcon,
+    ListItemText,
+    MenuIcon,
+    Avatar,
+    Stack,
+    Typography,
+} from '../muiImports/general/General';
+import {
+    PriceChangeRoundedIcon,
+    AccountBalanceWalletRoundedIcon,
+    SavingsRoundedIcon,
+    CandlestickChartRoundedIcon,
+    QueryStatsRoundedIcon,
+    AccountBoxRoundedIcon,
+    LogoutRoundedIcon,
+} from '../muiImports/icons/Icons';
 
 export default function SwipingTemporaryDrawer() {
     const [state, setState] = useState({
@@ -55,6 +60,9 @@ export default function SwipingTemporaryDrawer() {
                 </Stack>
             </Stack>
             <List>
+                <Typography variant="h6" component="div" sx={{ px: 3 }}>
+                    General
+                </Typography>
                 <ListItem disablePadding>
                     <ListItemButton>
                         <ListItemIcon>
@@ -73,6 +81,9 @@ export default function SwipingTemporaryDrawer() {
                 </ListItem>
             </List>
             <Divider />
+            <Typography variant="h6" component="div" sx={{px: 3}}>
+                Extras
+            </Typography>
             <ListItem disablePadding>
                 <ListItemButton>
                     <ListItemIcon>
@@ -95,6 +106,26 @@ export default function SwipingTemporaryDrawer() {
                         <QueryStatsRoundedIcon />
                     </ListItemIcon>
                     <ListItemText primary="Reporting & Analytics" />
+                </ListItemButton>
+            </ListItem>
+            <Divider />
+            <Typography variant="h6" component="div" sx={{px: 3}}>
+                Account
+            </Typography>
+            <ListItem disablePadding>
+                <ListItemButton>
+                    <ListItemIcon>
+                        <AccountBoxRoundedIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="My Account" />
+                </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+                <ListItemButton>
+                    <ListItemIcon>
+                        <LogoutRoundedIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Logout" />
                 </ListItemButton>
             </ListItem>
         </Box>

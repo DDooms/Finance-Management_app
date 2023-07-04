@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {useNavigate, Outlet} from 'react-router-dom';
 import {
     createTheme, ThemeProvider, Box, SwipingDrawer, Button, List, Divider, ListItem, ListItemButton, ListItemIcon, ListItemText,
     MenuIcon, Avatar, Stack, Typography,
@@ -12,6 +13,7 @@ export default function SwipingTemporaryDrawer() {
     const [state, setState] = useState({
         left: false,
     });
+    const navigate = useNavigate();
 
     const toggleDrawer = (open) => (event) => {
         if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -46,7 +48,7 @@ export default function SwipingTemporaryDrawer() {
                     General
                 </Typography>
                 <ListItem disablePadding>
-                    <ListItemButton>
+                    <ListItemButton onClick={() => navigate('/dashboard/cashflow')}>
                         <ListItemIcon>
                             <PriceChangeRoundedIcon />
                         </ListItemIcon>
@@ -141,6 +143,7 @@ export default function SwipingTemporaryDrawer() {
                     {list}
                 </SwipingDrawer>
             </ThemeProvider>
+            <Outlet />
         </div>
     );
 }

@@ -7,6 +7,7 @@ import Home from "./components/home/Home";
 import Error from "./components/error/Error";
 import Dashboard from "./components/dashboard/Dashboard";
 import ThemeToggle from "./components/button/ThemeToggle";
+import Cashflow from "./components/dashboard/income_expense/Cashflow";
 
 
 function App() {
@@ -19,9 +20,11 @@ function App() {
                 </div>
                 <Routes>
                     <Route path='/' element={<Home/>}/>
-                    <Route path="/register" element={<Register/>}/>
-                    <Route path="/login" element={<Login/>}/>
-                    <Route path="/dashboard" element={<Dashboard/>}/>
+                    <Route path="register" element={<Register/>}/>
+                    <Route path="login" element={<Login/>}/>
+                    <Route path="dashboard" element={<Dashboard />}>
+                        <Route path="cashflow" element={<Cashflow />} />
+                    </Route>
                     <Route path='*' element={<Error/>}/>
                 </Routes>
             </div>

@@ -7,6 +7,7 @@ import AccountBoxRoundedIcon from '@mui/icons-material/AccountBoxRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 
 export {
     PriceChangeRoundedIcon,
@@ -18,4 +19,5 @@ export {
     LogoutRoundedIcon,
     KeyboardArrowLeft,
     KeyboardArrowRight,
+    AttachMoneyIcon,
 };

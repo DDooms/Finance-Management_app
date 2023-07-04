@@ -118,7 +118,7 @@ export default function SwipingTemporaryDrawer() {
     const theme = createTheme({
         palette: {
             background: {
-                paper: '#566456',
+                paper: '#626462',
             },
         },
     });

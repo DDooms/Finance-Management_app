@@ -15,6 +15,11 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import PriceChangeRoundedIcon from '@mui/icons-material/PriceChangeRounded';
+import AccountBalanceWalletRoundedIcon from '@mui/icons-material/AccountBalanceWalletRounded';
+import SavingsRoundedIcon from '@mui/icons-material/SavingsRounded';
+import CandlestickChartRoundedIcon from '@mui/icons-material/CandlestickChartRounded';
+import QueryStatsRoundedIcon from '@mui/icons-material/QueryStatsRounded';
 
 export default function SwipingTemporaryDrawer() {
     const [state, setState] = useState({
@@ -43,7 +48,6 @@ export default function SwipingTemporaryDrawer() {
                     <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
                     <Typography variant="h6" component="div">
                         Beray
-
                         <Typography variant="subtitle2" component="div">
                             Wallet App
                         </Typography>
@@ -51,30 +55,48 @@ export default function SwipingTemporaryDrawer() {
                 </Stack>
             </Stack>
             <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItemButton>
-                    </ListItem>
-                ))}
+                <ListItem disablePadding>
+                    <ListItemButton>
+                        <ListItemIcon>
+                            <PriceChangeRoundedIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Income & Expense Tracking" />
+                    </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
+                    <ListItemButton>
+                        <ListItemIcon>
+                            <AccountBalanceWalletRoundedIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Budgeting & Financial Goals" />
+                    </ListItemButton>
+                </ListItem>
             </List>
             <Divider />
-            <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItemButton>
-                    </ListItem>
-                ))}
-            </List>
+            <ListItem disablePadding>
+                <ListItemButton>
+                    <ListItemIcon>
+                        <SavingsRoundedIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Savings" />
+                </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+                <ListItemButton>
+                    <ListItemIcon>
+                        <CandlestickChartRoundedIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Investment Tracking" />
+                </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+                <ListItemButton>
+                    <ListItemIcon>
+                        <QueryStatsRoundedIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Reporting & Analytics" />
+                </ListItemButton>
+            </ListItem>
         </Box>
     );
 

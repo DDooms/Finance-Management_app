@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
     CartesianGrid,
     Cell,
@@ -10,26 +10,46 @@ import {
     ResponsiveContainer,
     Tooltip,
     XAxis,
-    YAxis
+    YAxis,
+    Label,
 } from 'recharts';
 import {Divider, Grid, Paper, Typography, IconButton} from '../../muiImports/general/General';
-import {AttachMoneyIcon, HealthAndSafetyRoundedIcon, FlightRoundedIcon, RestaurantRoundedIcon} from '../../muiImports/icons/Icons';
+import {
+    AttachMoneyIcon,
+    CarRentalRoundedIcon,
+    ShoppingBasketRoundedIcon,
+    SportsEsportsRoundedIcon,
+    ShoppingCartRoundedIcon,
+    RestaurantRoundedIcon,
+    DirectionsBusFilledRoundedIcon,
+    FlightRoundedIcon,
+    HealthAndSafetyRoundedIcon,
+    MiscellaneousServicesRoundedIcon,
+    AccessibilityNewRoundedIcon,
+    HouseRoundedIcon,
+    BusinessCenterRoundedIcon
+} from '../../muiImports/icons/Icons';
 
+const categories = ['Rent', 'Groceries', 'Entertainment', 'Shopping', 'Restaurant', 'Transportation',
+    'Travel', 'Health', 'Services', 'General', 'Utilities', 'Insurance'];
 
-const categories = ['Health', 'Travel', 'Restaurant'];
-
-// Replace this function with your logic to retrieve the value for each category
 const getCategoryValue = (category) => {
-    // Add your logic here to retrieve the value for each category
-    // For demonstration purposes, let's assume a simple mapping of category names to values
     const categoryValueMap = {
-        Health: 400,
-        Travel: 300,
-        Restaurant: 200,
-        // Add more category-value mappings as needed
+        Rent: 400,
+        Groceries: 300,
+        Entertainment: 200,
+        Shopping: 400,
+        Restaurant: 500,
+        Transportation: 600,
+        Travel: 700,
+        Health: 800,
+        Services: 900,
+        General: 250,
+        Utilities: 350,
+        Insurance: 478,
     };
 
-    return categoryValueMap[category] || 0; // Default value of 0 if category value is not found
+    return categoryValueMap[category] || 0;
 };
 
 const data = categories.map((category) => ({
@@ -83,13 +103,13 @@ const data2 = [
     },
 ];
 
-const CustomizedLabel = ({ x, y, stroke, value }) => (
+const CustomizedLabel = ({x, y, stroke, value}) => (
     <text x={x} y={y} dy={-4} fill={stroke} fontSize={10} textAnchor="middle">
         {value}
     </text>
 );
 
-const CustomizedAxisTick = ({ x, y, payload }) => (
+const CustomizedAxisTick = ({x, y, payload}) => (
     <g transform={`translate(${x},${y})`}>
         <text x={0} y={0} dy={16} textAnchor="end" fill="#666" transform="rotate(-35)">
             {payload.value}
@@ -125,6 +145,19 @@ const renderCustomizedLabel = ({
     );
 };
 
+const CustomTooltip = ({ active, payload, label }) => {
+    if (active && payload && payload.length) {
+        return (
+            <div className="custom-tooltip">
+                {label ? <p>{label}</p> : null}
+                <p>{`Value: ${payload[0].value}`}</p> {/* Display the actual value */}
+            </div>
+        );
+    }
+
+    return null;
+};
+
 const Cashflow = () => {
     const [selectedCategories, setSelectedCategories] = useState([]);
 
@@ -140,12 +173,30 @@ const Cashflow = () => {
 
     const getCategoryIcon = (category) => {
         switch (category) {
-            case 'Health':
-                return <HealthAndSafetyRoundedIcon />;
-            case 'Travel':
-                return <FlightRoundedIcon />;
+            case 'Rent':
+                return <CarRentalRoundedIcon/>;
+            case 'Groceries':
+                return <ShoppingBasketRoundedIcon/>;
+            case 'Entertainment':
+                return <SportsEsportsRoundedIcon/>;
+            case 'Shopping':
+                return <ShoppingCartRoundedIcon/>;
             case 'Restaurant':
-                return <RestaurantRoundedIcon />;
+                return <RestaurantRoundedIcon/>;
+            case 'Transportation':
+                return <DirectionsBusFilledRoundedIcon/>;
+            case 'Travel':
+                return <FlightRoundedIcon/>;
+            case 'Health':
+                return <HealthAndSafetyRoundedIcon/>;
+            case 'Services':
+                return <MiscellaneousServicesRoundedIcon/>;
+            case 'General':
+                return <AccessibilityNewRoundedIcon/>;
+            case 'Utilities':
+                return <HouseRoundedIcon/>;
+            case 'Insurance':
+                return <BusinessCenterRoundedIcon/>;
             default:
                 return null;
         }
@@ -157,17 +208,17 @@ const Cashflow = () => {
             <Grid item container spacing={3} justifyContent="center" alignItems="center">
                 <Grid item xs={3}>
                     {/* Total Income Grid */}
-                    <Paper sx={{ padding: '1rem', backgroundColor: 'darkgray' }}>
+                    <Paper sx={{padding: '1rem', backgroundColor: 'darkgray'}}>
                         <Grid container spacing={1} alignItems="center" justifyContent="center">
-                            <Grid item sx={{ textAlign: 'center' }}>
-                                <AttachMoneyIcon sx={{ color: 'green', fontSize: '4rem' }} />
+                            <Grid item sx={{textAlign: 'center'}}>
+                                <AttachMoneyIcon sx={{color: 'green', fontSize: '4rem'}}/>
                             </Grid>
-                            <Divider orientation="vertical" flexItem sx={{ height: '5rem' }} />
+                            <Divider orientation="vertical" flexItem sx={{height: '5rem'}}/>
                             <Grid item xs>
-                                <Typography variant="h5" sx={{ textAlign: 'center', color: 'white' }}>
+                                <Typography variant="h5" sx={{textAlign: 'center', color: 'white'}}>
                                     Total Income
                                 </Typography>
-                                <Typography variant="h5" sx={{ fontWeight: 'bold', textAlign: 'center', color: 'white' }}>
+                                <Typography variant="h5" sx={{fontWeight: 'bold', textAlign: 'center', color: 'white'}}>
                                     $333
                                 </Typography>
                             </Grid>
@@ -176,17 +227,17 @@ const Cashflow = () => {
                 </Grid>
                 <Grid item xs={3}>
                     {/* Total Expense Grid */}
-                    <Paper sx={{ padding: '1rem', backgroundColor: 'darkgray' }}>
+                    <Paper sx={{padding: '1rem', backgroundColor: 'darkgray'}}>
                         <Grid container spacing={1} alignItems="center" justifyContent="center">
-                            <Grid item sx={{ textAlign: 'center' }}>
-                                <AttachMoneyIcon sx={{ color: 'red', fontSize: '4rem' }} />
+                            <Grid item sx={{textAlign: 'center'}}>
+                                <AttachMoneyIcon sx={{color: 'red', fontSize: '4rem'}}/>
                             </Grid>
-                            <Divider orientation="vertical" flexItem sx={{ height: '5rem' }} />
+                            <Divider orientation="vertical" flexItem sx={{height: '5rem'}}/>
                             <Grid item xs>
-                                <Typography variant="h5" sx={{ textAlign: 'center', color: 'white' }}>
+                                <Typography variant="h5" sx={{textAlign: 'center', color: 'white'}}>
                                     Total Expense
                                 </Typography>
-                                <Typography variant="h5" sx={{ fontWeight: 'bold', textAlign: 'center', color: 'white' }}>
+                                <Typography variant="h5" sx={{fontWeight: 'bold', textAlign: 'center', color: 'white'}}>
                                     $200
                                 </Typography>
                             </Grid>
@@ -195,17 +246,17 @@ const Cashflow = () => {
                 </Grid>
                 <Grid item xs={3}>
                     {/* Balance Grid */}
-                    <Paper sx={{ padding: '1rem', backgroundColor: 'darkgray' }}>
+                    <Paper sx={{padding: '1rem', backgroundColor: 'darkgray'}}>
                         <Grid container spacing={1} alignItems="center" justifyContent="center">
-                            <Grid item sx={{ textAlign: 'center' }}>
-                                <AttachMoneyIcon sx={{ color: 'blue', fontSize: '4rem' }} />
+                            <Grid item sx={{textAlign: 'center'}}>
+                                <AttachMoneyIcon sx={{color: 'blue', fontSize: '4rem'}}/>
                             </Grid>
-                            <Divider orientation="vertical" flexItem sx={{ height: '5rem' }} />
+                            <Divider orientation="vertical" flexItem sx={{height: '5rem'}}/>
                             <Grid item xs>
-                                <Typography variant="h5" sx={{ textAlign: 'center', color: 'white' }}>
+                                <Typography variant="h5" sx={{textAlign: 'center', color: 'white'}}>
                                     Balance
                                 </Typography>
-                                <Typography variant="h5" sx={{ fontWeight: 'bold', textAlign: 'center', color: 'white' }}>
+                                <Typography variant="h5" sx={{fontWeight: 'bold', textAlign: 'center', color: 'white'}}>
                                     $133
                                 </Typography>
                             </Grid>
@@ -218,24 +269,26 @@ const Cashflow = () => {
             <Grid item container spacing={3} justifyContent="center" alignItems="center">
                 <Grid item xs={3}>
                     {/* Testing Broo Grid */}
-                    <Paper sx={{ padding: '1rem', backgroundColor: 'darkgray' }}>
-                        <Grid container spacing={1} alignItems="center" justifyContent="center">
+                    <Paper sx={{padding: '1rem', backgroundColor: 'darkgray'}}>
+                        <Typography variant="h5" sx={{textAlign: 'center', color: 'white'}}>
+                            Expense By Category
+                        </Typography>
+                        <Grid container spacing={0} alignItems="center" justifyContent="center">
                             {/* Render category buttons */}
                             {categories.map((category, index) => (
                                 <IconButton
                                     key={index}
                                     onClick={() => handleCategoryClick(category)}
                                     color={isCategorySelected(category) ? 'primary' : 'default'}
+                                    title={category}
                                 >
                                     {/* Render category icons */}
                                     {getCategoryIcon(category)}
                                 </IconButton>
                             ))}
-                            <Typography variant="h5" sx={{ textAlign: 'center', color: 'white' }}>
-                                Expense By Category
-                            </Typography>
-                            <ResponsiveContainer width="100%" height={400}>
+                            <ResponsiveContainer width="100%" height={313}>
                                 <PieChart>
+                                    <Tooltip content={<CustomTooltip />} /> {/* Use custom tooltip */}
                                     <Pie
                                         data={data.filter((entry) => isCategorySelected(entry.name))}
                                         cx="50%"
@@ -247,7 +300,7 @@ const Cashflow = () => {
                                         dataKey="value"
                                     >
                                         {data.map((entry, index) => (
-                                            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                                            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]}/>
                                         ))}
                                     </Pie>
                                 </PieChart>
@@ -257,9 +310,9 @@ const Cashflow = () => {
                 </Grid>
                 <Grid item xs={6}>
                     {/* Here We Goo Grid */}
-                    <Paper sx={{ padding: '1rem', backgroundColor: 'darkgray' }}>
+                    <Paper sx={{padding: '1rem', backgroundColor: 'darkgray'}}>
                         <Grid container spacing={1} alignItems="center" justifyContent="center">
-                            <Typography variant="h5" sx={{ textAlign: 'center', color: 'white' }}>
+                            <Typography variant="h5" sx={{textAlign: 'center', color: 'white'}}>
                                 Income vs Expense
                             </Typography>
                             <ResponsiveContainer width="100%" height={400}>
@@ -274,13 +327,13 @@ const Cashflow = () => {
                                         bottom: 10,
                                     }}
                                 >
-                                    <CartesianGrid strokeDasharray="3 3" />
-                                    <XAxis dataKey="name" height={60} tick={<CustomizedAxisTick />} />
-                                    <YAxis />
-                                    <Tooltip />
-                                    <Legend />
-                                    <Line type="monotone" dataKey="Income" stroke="#509341" label={<CustomizedLabel />} />
-                                    <Line type="monotone" dataKey="Expense" stroke="#9f082a" />
+                                    <CartesianGrid strokeDasharray="3 3"/>
+                                    <XAxis dataKey="name" height={60} tick={<CustomizedAxisTick/>}/>
+                                    <YAxis/>
+                                    <Tooltip/>
+                                    <Legend/>
+                                    <Line type="monotone" dataKey="Income" stroke="#509341" label={<CustomizedLabel/>}/>
+                                    <Line type="monotone" dataKey="Expense" stroke="#9f082a"/>
                                 </LineChart>
                             </ResponsiveContainer>
                         </Grid>

@@ -45,5 +45,5 @@ export {
     MiscellaneousServicesRoundedIcon,
     AccessibilityNewRoundedIcon,
     HouseRoundedIcon,
-    BusinessCenterRoundedIcon
+    BusinessCenterRoundedIcon,
 };

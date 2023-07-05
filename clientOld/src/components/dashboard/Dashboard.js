@@ -6,7 +6,7 @@ import {
 } from '../muiImports/general/General';
 import {
     PriceChangeRoundedIcon, AccountBalanceWalletRoundedIcon, SavingsRoundedIcon, CandlestickChartRoundedIcon,
-    QueryStatsRoundedIcon, AccountBoxRoundedIcon, LogoutRoundedIcon,
+    QueryStatsRoundedIcon, LogoutRoundedIcon, ManageAccountsRoundedIcon,
 } from '../muiImports/icons/Icons';
 
 export default function SwipingTemporaryDrawer() {
@@ -99,7 +99,7 @@ export default function SwipingTemporaryDrawer() {
             <ListItem disablePadding>
                 <ListItemButton onClick={() => navigate('/dashboard/account')}>
                     <ListItemIcon>
-                        <AccountBoxRoundedIcon />
+                        <ManageAccountsRoundedIcon />
                     </ListItemIcon>
                     <ListItemText primary="My Account" />
                 </ListItemButton>

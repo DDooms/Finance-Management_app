@@ -21,6 +21,13 @@ import MiscellaneousServicesRoundedIcon from '@mui/icons-material/MiscellaneousS
 import AccessibilityNewRoundedIcon from '@mui/icons-material/AccessibilityNewRounded';
 import HouseRoundedIcon from '@mui/icons-material/HouseRounded';
 import BusinessCenterRoundedIcon from '@mui/icons-material/BusinessCenterRounded';
+import AddIcon from '@material-ui/icons/Add';
+import CategoryIcon from "@material-ui/icons/Category";
+import DateRangeIcon from "@material-ui/icons/DateRange";
+import MonetizationOnIcon from "@material-ui/icons/MonetizationOn";
+import EditIcon from "@material-ui/icons/Edit";
+import DeleteIcon from "@material-ui/icons/Delete";
+import IconButton from "@mui/material/IconButton";
 
 export {
     PriceChangeRoundedIcon,
@@ -46,4 +53,11 @@ export {
     AccessibilityNewRoundedIcon,
     HouseRoundedIcon,
     BusinessCenterRoundedIcon,
+    AddIcon,
+    EditIcon,
+    DeleteIcon,
+    DateRangeIcon,
+    MonetizationOnIcon,
+    IconButton,
+    CategoryIcon,
 };

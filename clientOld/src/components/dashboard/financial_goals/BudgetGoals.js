@@ -1,10 +1,26 @@
-import React, { useState } from 'react';
-import { Grid, Paper, Typography, Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
-import AddIcon from '@mui/icons-material/Add';
-import CategoryIcon from '@mui/icons-material/Category';
-import DateRangeIcon from '@mui/icons-material/DateRange';
-import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
-import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
+import React, {useState} from 'react';
+import {
+    Button,
+    Grid,
+    Paper,
+    Table,
+    TableBody,
+    TableCell,
+    TableContainer,
+    TableHead,
+    TableRow,
+    Typography
+} from '../../muiImports/general/General';
+import {
+    AddIcon,
+    CategoryIcon,
+    DateRangeIcon,
+    MonetizationOnIcon,
+    EditIcon,
+    DeleteIcon,
+    IconButton,
+} from '../../muiImports/icons/Icons';
+
 
 const budgetData = [
     { category: 'Food', date: '2023-07-01', amount: '$50', transaction: 'Expense' },
@@ -61,31 +77,30 @@ const BudgetingPage = () => {
         <Grid
             container
             justifyContent="center"
-            style={{ minHeight: '50vh'}}
         >
             <Grid item container
                   justifyContent="center"
-                  style={{ minHeight: '50vh'}}>
-                <Paper elevation={3} style={{ padding: '2rem', position: 'relative', backgroundColor: 'darkgray', width: '60%' }}>
+            >
+                <Paper elevation={3} style={{ padding: '1.5rem', position: 'relative', backgroundColor: 'darkgray', width: '60%' }}>
                     <Typography variant="h4" component="h2" gutterBottom>
                         Budgets
                     </Typography>
                     <Button
                         variant="contained"
-                        color="primary"
+                        color="success"
                         endIcon={<AddIcon />}
                         style={{ position: 'absolute', top: '1rem', right: '1rem' }}
                     >
                         New Budget
                     </Button>
-                    <TableContainer component={Paper} style={{ marginTop: '2rem', backgroundColor: 'lightgray' }}>
+                    <TableContainer component={Paper} style={{ marginTop: '1rem', backgroundColor: 'lightgray' }}>
                         <Table>
                             <TableHead>
                                 <TableRow>
                                     <TableCell>Category</TableCell>
                                     <TableCell>Date</TableCell>
                                     <TableCell>Amount</TableCell>
-                                    <TableCell>Transaction</TableCell>
+                                    <TableCell>Actions</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
@@ -104,8 +119,12 @@ const BudgetingPage = () => {
                                             {budgetItem.amount}
                                         </TableCell>
                                         <TableCell>
-                                            <SwapHorizIcon style={{ marginRight: '0.5rem' }} />
-                                            {budgetItem.transaction}
+                                            <IconButton color="primary" aria-label="Edit" title="Edit" component="span">
+                                                <EditIcon />
+                                            </IconButton>
+                                            <IconButton color="error" aria-label="Delete" title="Delete" component="span">
+                                                <DeleteIcon />
+                                            </IconButton>
                                         </TableCell>
                                     </TableRow>
                                 ))}

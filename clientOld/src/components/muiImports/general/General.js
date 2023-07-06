@@ -14,7 +14,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import {useTheme} from '@mui/material/styles';
 import MobileStepper from '@mui/material/MobileStepper';
-import { Grid, Paper, IconButton } from '@mui/material';
+import { Grid, Paper, IconButton, Table, TableCell, TableHead, TableRow, TableBody, TableContainer } from '@mui/material';
 
 export {
     createTheme,
@@ -37,4 +37,10 @@ export {
     Grid,
     Paper,
     IconButton,
+    Table,
+    TableCell,
+    TableHead,
+    TableRow,
+    TableBody,
+    TableContainer,
 };

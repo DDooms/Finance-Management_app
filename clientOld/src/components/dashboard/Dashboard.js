@@ -48,7 +48,7 @@ export default function SwipingTemporaryDrawer() {
                     General
                 </Typography>
                 <ListItem disablePadding>
-                    <ListItemButton onClick={() => navigate('/dashboard/cashflow')}>
+                    <ListItemButton onClick={() => navigate('/dashboard/income-and-expense-tracking')}>
                         <ListItemIcon>
                             <PriceChangeRoundedIcon />
                         </ListItemIcon>
@@ -69,7 +69,7 @@ export default function SwipingTemporaryDrawer() {
                 Extras
             </Typography>
             <ListItem disablePadding>
-                <ListItemButton onClick={() => navigate('/dashboard/savings')}>
+                <ListItemButton onClick={() => navigate('/dashboard/savings-and-transactions')}>
                     <ListItemIcon>
                         <SavingsRoundedIcon />
                     </ListItemIcon>

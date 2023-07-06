@@ -28,9 +28,9 @@ function App() {
                     <Route path="register" element={<Register/>}/>
                     <Route path="login" element={<Login/>}/>
                     <Route path="dashboard" element={<Dashboard />}>
-                        <Route path="cashflow" element={<Cashflow />} />
+                        <Route path="income-and-expense-tracking" element={<Cashflow />} />
                         <Route path="budget-financial-goals" element={<BudgetGoals />} />
-                        <Route path="savings" element={<Savings />} />
+                        <Route path="savings-and-transactions" element={<Savings />} />
                         <Route path="investment-tracking" element={<InvestmentTracking />} />
                         <Route path="analytics" element={<Analytics />} />
                         <Route path="account" element={<Account />} />

@@ -11,23 +11,22 @@ import {
     Tooltip,
     XAxis,
     YAxis,
-    Label,
 } from 'recharts';
-import {Divider, Grid, Paper, Typography, IconButton} from '../../muiImports/general/General';
+import {Divider, Grid, IconButton, Paper, Typography} from '../../muiImports/general/General';
 import {
+    AccessibilityNewRoundedIcon,
     AttachMoneyIcon,
+    BusinessCenterRoundedIcon,
     CarRentalRoundedIcon,
-    ShoppingBasketRoundedIcon,
-    SportsEsportsRoundedIcon,
-    ShoppingCartRoundedIcon,
-    RestaurantRoundedIcon,
     DirectionsBusFilledRoundedIcon,
     FlightRoundedIcon,
     HealthAndSafetyRoundedIcon,
-    MiscellaneousServicesRoundedIcon,
-    AccessibilityNewRoundedIcon,
     HouseRoundedIcon,
-    BusinessCenterRoundedIcon
+    MiscellaneousServicesRoundedIcon,
+    RestaurantRoundedIcon,
+    ShoppingBasketRoundedIcon,
+    ShoppingCartRoundedIcon,
+    SportsEsportsRoundedIcon
 } from '../../muiImports/icons/Icons';
 
 const categories = ['Rent', 'Groceries', 'Entertainment', 'Shopping', 'Restaurant', 'Transportation',

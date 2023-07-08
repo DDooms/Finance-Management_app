@@ -2,14 +2,43 @@ import React, {useState} from 'react';
 import {useNavigate, Outlet} from 'react-router-dom';
 import {
     createTheme, ThemeProvider, Box, SwipingDrawer, Button, List, Divider, ListItem, ListItemButton, ListItemIcon, ListItemText,
-    MenuIcon, Avatar, Stack, Typography,
+    MenuIcon, Avatar, Stack, Typography, Link
 } from '../muiImports/general/General';
 import {
     PriceChangeRoundedIcon, AccountBalanceWalletRoundedIcon, SavingsRoundedIcon, CandlestickChartRoundedIcon,
-    QueryStatsRoundedIcon, LogoutRoundedIcon, ManageAccountsRoundedIcon, ContactlessRoundedIcon,
+    QueryStatsRoundedIcon, LogoutRoundedIcon, ManageAccountsRoundedIcon, ContactlessRoundedIcon, InstagramIcon, FacebookIcon,
 } from '../muiImports/icons/Icons';
 
-export default function SwipingTemporaryDrawer() {
+const Footer = () => {
+    return (
+        <footer style={{ backgroundColor: 'lightgray', padding: '20px', marginTop: '20px' }}>
+            <footer style={{ backgroundColor: 'lightgray', padding: '20px' }}>
+                <Typography variant="body1" align="center">
+                    {/*Maybe should be replaced with useNavigate from react hooks, instead of Link*/}
+                    <Link href="/faq" color="inherit" underline="hover">
+                        FAQ
+                    </Link>
+                    {' | '}
+                    <Link href="/about" color="inherit" underline="hover">
+                        About Us
+                    </Link>
+                </Typography>
+                <Typography variant="body2" align="center" style={{ marginTop: '10px' }}>
+                    Follow us on:
+                    {/*Should add our social media platforms*/}
+                    <Link href="https://www.instagram.com" target="_blank" rel="noopener" color="inherit" underline="none">
+                        <InstagramIcon style={{ marginLeft: '5px', fontSize: '24px' }} />
+                    </Link>
+                    <Link href="https://www.facebook.com" target="_blank" rel="noopener" color="inherit" underline="none">
+                        <FacebookIcon style={{ marginLeft: '5px', fontSize: '24px' }} />
+                    </Link>
+                </Typography>
+            </footer>
+        </footer>
+    );
+};
+
+const SwipingTemporaryDrawer = () => {
     const [state, setState] = useState({
         left: false,
     });
@@ -133,25 +162,18 @@ export default function SwipingTemporaryDrawer() {
 
     return (
         <div>
-            <Button
-                onClick={toggleDrawer(true)}
-                style={{
-                    color: 'black',
-                }}
-            >
+            <Button onClick={toggleDrawer(true)} style={{ color: 'black' }}>
                 <MenuIcon sx={{ color: 'white', fontSize: '2rem' }} />
             </Button>
             <ThemeProvider theme={theme}>
-                <SwipingDrawer
-                    anchor="left"
-                    open={state.left}
-                    onClose={toggleDrawer(false)}
-                    onOpen={toggleDrawer(true)}
-                >
+                <SwipingDrawer anchor="left" open={state.left} onClose={toggleDrawer(false)} onOpen={toggleDrawer(true)}>
                     {list}
                 </SwipingDrawer>
             </ThemeProvider>
             <Outlet />
+            <Footer />
         </div>
     );
 }
+
+export default SwipingTemporaryDrawer;

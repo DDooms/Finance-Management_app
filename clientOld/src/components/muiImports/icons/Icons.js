@@ -29,6 +29,8 @@ import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import IconButton from "@mui/material/IconButton";
 import ContactlessRoundedIcon from '@mui/icons-material/ContactlessRounded';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
 
 export {
     PriceChangeRoundedIcon,
@@ -62,4 +64,6 @@ export {
     IconButton,
     CategoryIcon,
     ContactlessRoundedIcon,
+    InstagramIcon,
+    FacebookIcon,
 };

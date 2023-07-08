@@ -28,6 +28,7 @@ import MonetizationOnIcon from "@material-ui/icons/MonetizationOn";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import IconButton from "@mui/material/IconButton";
+import ContactlessRoundedIcon from '@mui/icons-material/ContactlessRounded';
 
 export {
     PriceChangeRoundedIcon,
@@ -60,4 +61,5 @@ export {
     MonetizationOnIcon,
     IconButton,
     CategoryIcon,
+    ContactlessRoundedIcon,
 };

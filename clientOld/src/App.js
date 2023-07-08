@@ -13,6 +13,7 @@ import Savings from "./components/dashboard/savings/Savings";
 import InvestmentTracking from "./components/dashboard/investment_tracking/InvestmentTracking";
 import Analytics from "./components/dashboard/analytics/Analytics";
 import Account from "./components/dashboard/my_account/Account";
+import Transactions from "./components/dashboard/transactions/Transactions";
 
 
 function App() {
@@ -30,10 +31,11 @@ function App() {
                     <Route path="dashboard" element={<Dashboard />}>
                         <Route path="income-and-expense-tracking" element={<Cashflow />} />
                         <Route path="budget-financial-goals" element={<BudgetGoals />} />
-                        <Route path="savings-and-transactions" element={<Savings />} />
+                        <Route path="savings" element={<Savings />} />
                         <Route path="investment-tracking" element={<InvestmentTracking />} />
                         <Route path="analytics" element={<Analytics />} />
                         <Route path="account" element={<Account />} />
+                        <Route path="transactions" element={<Transactions />} />
                     </Route>
                     <Route path='*' element={<Error/>}/>
                 </Routes>

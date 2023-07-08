@@ -15,12 +15,12 @@ const App = () => {
     }, [isDarkMode]);
 
     const backgroundImage = isDarkMode
-        ? 'https://shorturl.at/mDT06'
-        : 'https://shorturl.at/svMV2';
+        ? 'https://shorturl.at/hsvL2'  // light mode
+        : 'https://shorturl.at/FLN18'; // dark mode
 
     const buttonImage = isDarkMode
-        ? 'https://shorturl.at/mDT06'
-        : 'https://shorturl.at/svMV2';
+        ? 'https://shorturl.at/hsvL2'  // light mode
+        : 'https://shorturl.at/FLN18'; // dark mode
 
     return (
         <div

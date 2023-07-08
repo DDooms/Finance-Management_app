@@ -1,11 +1,11 @@
 body {
-    background-image: url('https://shorturl.at/mDT06');
+    background-image: url('https://shorturl.at/hsvL2'); /*default light mode*/
     background-size: cover;
     background-repeat: repeat;
 }
 
 body.dark-mode {
-    background-image: url('https://shorturl.at/svMV2');
+    background-image: url('https://shorturl.at/FLN18'); /*dark mode*/
 }
 
 .homepage {

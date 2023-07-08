@@ -48,7 +48,7 @@ const budgetData = [
 
 const itemsPerPage = 6;
 
-const SavingsAndTransactions = () => {
+const Savings = () => {
     const [currentPage, setCurrentPage] = useState(1); // Current page number
 
     // Calculate the start and end index of items to display based on the current page
@@ -83,7 +83,7 @@ const SavingsAndTransactions = () => {
             >
                 <Paper elevation={3} style={{ padding: '1.5rem', position: 'relative', backgroundColor: 'darkgray', width: '60%' }}>
                     <Typography variant="h4" component="h2" gutterBottom>
-                        Transactions
+                        Savings
                     </Typography>
                     <Button
                         variant="contained"
@@ -91,7 +91,7 @@ const SavingsAndTransactions = () => {
                         endIcon={<AddIcon />}
                         style={{ position: 'absolute', top: '1rem', right: '1rem' }}
                     >
-                        New Transaction
+                        Add Savings
                     </Button>
                     <TableContainer component={Paper} style={{ marginTop: '1rem', backgroundColor: 'lightgray' }}>
                         <Table>
@@ -158,4 +158,4 @@ const SavingsAndTransactions = () => {
     );
 };
 
-export default SavingsAndTransactions;
+export default Savings;

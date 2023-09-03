@@ -30,4 +30,4 @@ Configuration options, such as database settings and API endpoints, can be custo
 •	Database: PostgreSQL
 
 5.Diagram overview
- 
+ ![image](https://github.com/DDooms/Finance-Management_app/assets/72613526/b6003676-0e2c-41f6-b49b-939a7fbf978e)
